@@ -3,6 +3,7 @@ package com.dio.bootcamp.dominio;
 import java.io.Serializable;
 import java.util.LinkedHashSet;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.Set;
 
 public class Dev implements Serializable{
@@ -24,15 +25,26 @@ public class Dev implements Serializable{
 	}
 	
 	public void inscreverBootcamp(Bootcamp bootcamp) {
-		//conteudosInscritos.add(bootcamp);
+		this.conteudosInscritos.addAll(bootcamp.getConteudos());
+		bootcamp.getDevsInscritos().add(this);
 	}
 	
 	public void progredir() {
+		Optional<Conteudo> conteudo = this.conteudosInscritos.stream().findFirst();
+		if(conteudo.isPresent()) {
+			this.conteudosConcluidos.add(conteudo.get());
+			this.conteudosInscritos.remove(conteudo.get());
+		}else {
+			System.out.println("Você não está matriculado em nenhum conteudo.");
+		}
 		
 	}
 	
-	public void calcularTotalXp() {
-		
+	public Double calcularTotalXp() {
+		return this.conteudosConcluidos
+				.stream()
+				.mapToDouble(conteudo -> conteudo.calcularXp())
+				.sum();
 	}
 
 	public Integer getId() {
