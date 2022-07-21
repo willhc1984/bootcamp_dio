@@ -86,8 +86,12 @@ public class Dev implements Serializable{
 			return false;
 		Dev other = (Dev) obj;
 		return Objects.equals(id, other.id);
+	}
+
+	@Override
+	public String toString() {
+		return "Dev [id=" + id + ", nome=" + nome + ", conteudosInscritos=" + conteudosInscritos
+				+ ", conteudosConcluidos=" + conteudosConcluidos + "]";
 	}	
-	
-	
 
 }

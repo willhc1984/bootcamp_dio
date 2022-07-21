@@ -11,8 +11,8 @@
 	<groupId>com.dio</groupId>
 	<artifactId>Abstraindo-Bootcamp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Campeonato</name>
-	<description>Projeto Spring REST+ H2 + JPA</description>
+	<name>Bootcamp</name>
+	<description>Bootcamp DIO - Java e OO</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>

@@ -12,7 +12,7 @@ public class Mentoria extends Conteudo{
 	}
 
 	public Mentoria(Integer id, String titulo, String descricao, Date data) {
-		super();
+		super(id, titulo, descricao);
 		this.data = data;
 	}
 
@@ -31,7 +31,13 @@ public class Mentoria extends Conteudo{
 
 	@Override
 	public String toString() {
-		return "Mentoria [data=" + data + "]";
-	}	
+        return "Mentoria{" +
+                "titulo='" + getTitulo() + '\'' +
+                ", descricao='" + getDescricao() + '\'' +
+                ", data=" + data +
+                '}';
+    }
+
+		
 
 }

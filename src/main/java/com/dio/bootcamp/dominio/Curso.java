@@ -8,9 +8,9 @@ public class Curso extends Conteudo{
 	
 	public Curso() {
 	}
-	
+
 	public Curso(Integer id, String titulo, String descricao, Integer cargaHoraria) {
-		super();
+		super(id, titulo, descricao);
 		this.cargaHoraria = cargaHoraria;
 	}
 
@@ -29,8 +29,15 @@ public class Curso extends Conteudo{
 
 	@Override
 	public String toString() {
-		return "Curso [cargaHoraria=" + cargaHoraria + "]";
-	}
+        return "Curso{" +
+                "titulo='" + getTitulo() + '\'' +
+                ", descricao='" + getDescricao() + '\'' +
+                ", cargaHoraria=" + cargaHoraria +
+                '}';
+    }
+
+	
+
 	
 	
 }

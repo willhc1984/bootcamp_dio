@@ -15,7 +15,7 @@ public abstract class Conteudo implements Serializable{
 	
 	public Conteudo() {
 	}
-	
+
 	public Conteudo(Integer id, String titulo, String descricao) {
 		super();
 		this.id = id;
@@ -65,10 +65,5 @@ public abstract class Conteudo implements Serializable{
 		Conteudo other = (Conteudo) obj;
 		return Objects.equals(id, other.id);
 	}
-
-	@Override
-	public String toString() {
-		return "Conteudo [id=" + id + ", titulo=" + titulo + ", descricao=" + descricao + "]";
-	}	
 
 }
